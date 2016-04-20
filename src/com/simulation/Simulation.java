@@ -1,14 +1,17 @@
 package com.simulation;
 
+import com.strategies.AdaptiveStrategy;
+import com.strategies.GrudgerStrategy;
 import com.strategies.RandomStrategy;
+import com.strategies.TitForTatStrategy;
 
 public class Simulation {
 
 	public static void main(String[] args) {
-		Prisoner p1 = new Prisoner("Alice",new RandomStrategy());
-		Prisoner p2 = new Prisoner("Bob",new RandomStrategy());
+		Prisoner p1 = new Prisoner("Alice",new AdaptiveStrategy());
+		Prisoner p2 = new Prisoner("Bob",new TitForTatStrategy());
 		
-		int threshold = 10;
+		int threshold = 50;
 		//int max_number_of_turns=20;
 		int turns_count = 0;
 		

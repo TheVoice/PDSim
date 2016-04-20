@@ -1,19 +1,16 @@
 package com.simulation;
 
-import java.util.LinkedList;
 
 import com.strategies.IStrategy;
 
 public class Prisoner {
 	private String name;
 	private IStrategy strategy;
-	private LinkedList<Move> moves; //opponent's moves history
 	private int score;
 	
 	public Prisoner(String name,IStrategy strategy){
 		this.name=name;
 		this.strategy=strategy;
-		this.moves = new LinkedList<Move>();
 		this.score = 0;
 	}
 	
@@ -22,7 +19,7 @@ public class Prisoner {
 	}
 	
 	public Move getMove(){
-		return strategy.getMove(moves);
+		return strategy.getMove();
 	}
 	
 	public void alterScore(int delta){
@@ -30,7 +27,7 @@ public class Prisoner {
 	}
 	
 	public void addMove(Move move){
-		this.moves.add(move);
+		this.strategy.addOpMove(move);
 	}
 	
 	public String getName(){
