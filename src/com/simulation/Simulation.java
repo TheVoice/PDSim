@@ -3,12 +3,13 @@ package com.simulation;
 import com.strategies.AdaptiveStrategy;
 import com.strategies.GrudgerStrategy;
 import com.strategies.RandomStrategy;
+import com.strategies.StochasticStrategy;
 import com.strategies.TitForTatStrategy;
 
 public class Simulation {
 
 	public static void main(String[] args) {
-		Prisoner p1 = new Prisoner("Alice",new AdaptiveStrategy());
+		Prisoner p1 = new Prisoner("Alice",new StochasticStrategy());
 		Prisoner p2 = new Prisoner("Bob",new TitForTatStrategy());
 		
 		int threshold = 50;

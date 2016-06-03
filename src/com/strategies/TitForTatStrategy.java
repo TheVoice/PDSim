@@ -1,6 +1,5 @@
 package com.strategies;
 
-import java.util.LinkedList;
 
 import com.simulation.Move;
 
