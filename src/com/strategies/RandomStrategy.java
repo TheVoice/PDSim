@@ -20,4 +20,10 @@ public class RandomStrategy implements IStrategy {
 
 	}
 
+
+	@Override
+	public String getName() {
+		return "Random";
+	}
+
 }

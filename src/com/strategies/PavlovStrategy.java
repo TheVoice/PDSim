@@ -27,4 +27,9 @@ public class PavlovStrategy implements IStrategy{
 		if(move == Move.COOPERATE) return Move.DEFECT;
 		else return Move.COOPERATE;
 	}
+
+	@Override
+	public String getName() {
+		return "Pavlov";
+	}
 }

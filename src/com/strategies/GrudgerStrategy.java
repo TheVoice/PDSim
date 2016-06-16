@@ -22,4 +22,9 @@ public class GrudgerStrategy implements IStrategy {
 		if(move == Move.DEFECT) grudge = true;
 	}
 
+	@Override
+	public String getName() {
+		return "Grudger";
+	}
+
 }

@@ -14,4 +14,9 @@ public class AlwaysDefectStrategy implements IStrategy {
 		
 	}
 
+	@Override
+	public String getName() {
+		return "Defective";
+	}
+
 }

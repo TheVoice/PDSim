@@ -14,4 +14,9 @@ public class AlwaysCooperateStrategy implements IStrategy {
 		
 	}
 
+	@Override
+	public String getName() {
+		return "Cooperative";
+	}
+
 }

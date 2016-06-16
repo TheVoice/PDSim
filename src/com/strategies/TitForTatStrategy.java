@@ -18,5 +18,9 @@ public class TitForTatStrategy implements IStrategy {
 	public void addOpMove(Move move) {
 		lastOpMove = move;
 	}
+	@Override
+	public String getName() {
+		return "T4T";
+	}
 
 }

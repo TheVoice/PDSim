@@ -33,4 +33,8 @@ public class Prisoner {
 	public String getName(){
 		return this.name;
 	}
+	
+	public IStrategy getStrategy(){
+		return this.strategy;
+	}
 }

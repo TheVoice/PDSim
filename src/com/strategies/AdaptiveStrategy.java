@@ -9,6 +9,7 @@ public class AdaptiveStrategy implements IStrategy {
 	private int coopSum = 0;
 	private int defSum = 0;
 	private int turns = 0;
+	private int cooldown = 0; 
 	private ArrayList<Move> myMoves = new ArrayList<Move>(){{
 		add(Move.COOPERATE);
 		add(Move.COOPERATE);
@@ -25,10 +26,17 @@ public class AdaptiveStrategy implements IStrategy {
 	@Override
 	public Move getMove() {
 		if(turns < 10){
+			cooldown++;
 			return myMoves.get(turns);
 		}else{
-			if(coopSum>=defSum) return Move.COOPERATE;
-			else return Move.DEFECT;
+			Move response = (coopSum>defSum) ? Move.COOPERATE : Move.DEFECT;
+			if(cooldown!=0) cooldown--;
+			else{
+				turns = 0;
+				coopSum = 0;
+				defSum = 0;
+			}
+			return response;
 		}
 	}
 
@@ -41,6 +49,11 @@ public class AdaptiveStrategy implements IStrategy {
 			if(myMoves.get(turns)==Move.DEFECT && move==Move.DEFECT) {};
 			turns++;
 		}
+	}
+
+	@Override
+	public String getName() {
+		return "Adaptive";
 	}
 
 }
